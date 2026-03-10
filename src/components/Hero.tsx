@@ -1,7 +1,7 @@
 import { ArrowRightIcon, PlayIcon, ZapIcon, CheckIcon } from "lucide-react";
 import { PrimaryButton, GhostButton } from "./Buttons";
 import { motion } from "framer-motion";
-import mainImage from "../assets/MainImg.JPG";
+import mainImage from "../assets/mainImg.JPG";
 
 export default function Hero() {
   const trustedUserImages = [
@@ -9,8 +9,6 @@ export default function Hero() {
     "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=50",
     "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=50&h=50&fit=crop",
   ];
-
-  const mainImageUrl = mainImage;
 
   const galleryStripImages = [
     "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=100",
@@ -173,7 +171,7 @@ export default function Hero() {
               <motion.div className="rounded-3xl overflow-hidden border border-white/6 shadow-2xl bg-linear-to-b from-black/50 to-transparent">
                 <div className="relative aspect-16/10 bg-gray-900">
                   <img
-                    src={mainImageUrl}
+                    src={mainImage}
                     alt="agency-work-preview"
                     className="w-full h-full object-cover object-center"
                   />
@@ -266,7 +264,3 @@ export default function Hero() {
     </>
   );
 }
-
-
-
-
