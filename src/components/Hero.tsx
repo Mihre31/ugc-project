@@ -1,7 +1,6 @@
 import { ArrowRightIcon, PlayIcon, ZapIcon, CheckIcon } from "lucide-react";
 import { PrimaryButton, GhostButton } from "./Buttons";
 import { motion } from "framer-motion";
-import mainImage from "../assets/MainImg.JPG";
 
 export default function Hero() {
   const trustedUserImages = [
@@ -9,7 +8,8 @@ export default function Hero() {
     "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=50",
     "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=50&h=50&fit=crop",
   ];
-
+  const imageUrl =
+    "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1200&auto=format&fit=crop";
   const galleryStripImages = [
     "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=100",
     "https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=100",
@@ -86,7 +86,7 @@ export default function Hero() {
                   delay: 0.2,
                 }}
               >
-                Upload product images and a model photo â€” our AI instantly
+                Upload product images and a model photo - our AI instantly
                 produces professional lifestyle imagery and short-form videos
                 optimized for commercials & Reels.{" "}
               </motion.p>
@@ -171,13 +171,13 @@ export default function Hero() {
               <motion.div className="rounded-3xl overflow-hidden border border-white/6 shadow-2xl bg-linear-to-b from-black/50 to-transparent">
                 <div className="relative aspect-16/10 bg-gray-900">
                   <img
-                    src={mainImage}
+                    src={imageUrl}
                     alt="agency-work-preview"
                     className="w-full h-full object-cover object-center"
                   />
 
                   <div className="absolute left-4 top-4 px-3 py-1 rounded-full bg-black/15 backdrop-blur-sm text-xs">
-                    Social-ready â€¢ 9:16 & 16:9
+                    Social-ready | 9:16 & 16:9
                   </div>
 
                   <div className="absolute right-4 bottom-4">
