@@ -2,12 +2,9 @@ import { useEffect, useState } from "react";
 import type { Project } from "../types";
 import {
   ImageIcon,
-  ImagesIcon,
   Loader2Icon,
-  RefreshCcwIcon,
   RefreshCwIcon,
   SparkleIcon,
-  TurkishLira,
   VideoIcon,
 } from "lucide-react";
 

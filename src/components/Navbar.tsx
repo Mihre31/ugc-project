@@ -1,10 +1,8 @@
 import {
   DollarSignIcon,
   FolderEditIcon,
-  GalleryHorizontalEnd,
   MenuIcon,
   SparkleIcon,
-  User,
   XIcon,
 } from "lucide-react";
 import { GhostButton, PrimaryButton } from "./Buttons";

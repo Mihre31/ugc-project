@@ -1,10 +1,10 @@
 import Title from "./Title";
 
-import { useRef } from "react";
+//import { useRef } from "react";
 import { PricingTable } from "@clerk/clerk-react";
 
 export default function Pricing() {
-  const refs = useRef<(HTMLDivElement | null)[]>([]);
+  //const refs = useRef<(HTMLDivElement | null)[]>([]);
   return (
     <section id="pricing" className="py-20 bg-white/3 border-t border-white/6">
       <div className="max-w-6xl mx-auto px-4">
