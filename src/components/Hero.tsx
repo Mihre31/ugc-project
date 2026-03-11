@@ -1,7 +1,7 @@
 import { ArrowRightIcon, PlayIcon, ZapIcon, CheckIcon } from "lucide-react";
 import { PrimaryButton, GhostButton } from "./Buttons";
 import { motion } from "framer-motion";
-import mainImage from "../assets/mainImg.JPG";
+import mainImage from "../assets/MainImg.JPG";
 
 export default function Hero() {
   const trustedUserImages = [
@@ -86,7 +86,7 @@ export default function Hero() {
                   delay: 0.2,
                 }}
               >
-                Upload product images and a model photo — our AI instantly
+                Upload product images and a model photo â€” our AI instantly
                 produces professional lifestyle imagery and short-form videos
                 optimized for commercials & Reels.{" "}
               </motion.p>
@@ -177,7 +177,7 @@ export default function Hero() {
                   />
 
                   <div className="absolute left-4 top-4 px-3 py-1 rounded-full bg-black/15 backdrop-blur-sm text-xs">
-                    Social-ready • 9:16 & 16:9
+                    Social-ready â€¢ 9:16 & 16:9
                   </div>
 
                   <div className="absolute right-4 bottom-4">
