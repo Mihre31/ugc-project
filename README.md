@@ -39,4 +39,21 @@ Services
 git clone https://github.com/Mihre31/ugc-project.git
 cd ugc-project
 npm install
+cd backend
+npm install
+```
+
+## Run Locally
+
+Frontend
+
+```bash
 npm run dev
+```
+
+Backend
+
+```bash
+cd backend
+npm run dev
+```
