@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import type { Project } from "../types";
 import {
+  Globe2Icon,
   ImageIcon,
   Loader2Icon,
   RefreshCwIcon,
@@ -23,6 +24,7 @@ const Result = () => {
   const [project, setProjectData] = useState<Project>({} as Project);
   const [loading, setLoading] = useState(true);
   const [isGenerating, setIsGenerating] = useState(false);
+  const [isPublishing, setIsPublishing] = useState(false);
 
   const fetchProjectData = async () => {
     try {
@@ -59,6 +61,36 @@ const Result = () => {
     } catch (error: any) {
       toast.error(error?.response?.data?.message || error.message);
       console.log(error);
+    }
+  };
+
+  const handleTogglePublish = async () => {
+    if (!project?.id) return;
+
+    setIsPublishing(true);
+    try {
+      const token = await getToken();
+      const { data } = await api.patch(
+        `/api/user/projects/${project.id}/publish`,
+        null,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        },
+      );
+
+      setProjectData((prev) => ({
+        ...prev,
+        isPublished: data.isPublished,
+      }));
+
+      toast.success(
+        data.isPublished ? "Project Published" : "Project Unpublished",
+      );
+    } catch (error: any) {
+      toast.error(error?.response?.data?.message || error.message);
+      console.log(error);
+    } finally {
+      setIsPublishing(false);
     }
   };
 
@@ -150,6 +182,50 @@ const Result = () => {
                     Download Video
                   </GhostButton>
                 </a>
+              </div>
+            </div>
+
+            <div className="glass-panel p-6 rounded-2xl relative overflow-hidden border border-indigo-500/30">
+              <div className="absolute top-0 right-0 p-4 opacity-10">
+                <Globe2Icon className="size-24" />
+              </div>
+              <div className="relative">
+                <div className="flex items-center justify-between gap-3 mb-3">
+                  <h3 className="text-xl font-semibold">Publish Video</h3>
+                  <span
+                    className={`rounded-full px-3 py-1 text-xs font-medium ${
+                      project.isPublished
+                        ? "bg-green-500/15 text-green-300 border border-green-500/30"
+                        : "bg-white/8 text-gray-300 border border-white/10"
+                    }`}
+                  >
+                    {project.isPublished ? "Live on Community" : "Private"}
+                  </span>
+                </div>
+                <p className="text-sm text-gray-300 mb-2">
+                  Make this project visible on the Community page so others can
+                  view your generated result.
+                </p>
+                <p className="text-xs text-gray-400 mb-5">
+                  You can publish after generating an image or video, and unpublish
+                  anytime.
+                </p>
+                <PrimaryButton
+                  onClick={handleTogglePublish}
+                  disabled={
+                    isPublishing ||
+                    isGenerating ||
+                    (!project.generatedImage && !project.generatedVideo)
+                  }
+                  className="w-full justify-center"
+                >
+                  <Globe2Icon className="size-4" />
+                  {isPublishing
+                    ? "Updating..."
+                    : project.isPublished
+                      ? "Unpublish from Community"
+                      : "Publish to Community"}
+                </PrimaryButton>
               </div>
             </div>
 
