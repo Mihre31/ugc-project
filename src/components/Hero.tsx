@@ -110,11 +110,12 @@ export default function Hero() {
                     <ArrowRightIcon className="size-4" />
                   </PrimaryButton>
                 </a>
-
-                <GhostButton className="max-sm:w-full max-sm:justify-center py-3 px-5">
-                  <PlayIcon className="size-4" />
-                  watch demo
-                </GhostButton>
+                <a href="/community">
+                  <GhostButton className="max-sm:w-full max-sm:justify-center py-3 px-5">
+                    <PlayIcon className="size-4" />
+                    watch demo
+                  </GhostButton>
+                </a>
               </motion.div>
 
               <motion.div
